@@ -4,3 +4,5 @@
 /videoGameCatalogManager/tmp
 /videoGameCatalogManager/out-tsc
 /videoGameCatalogManager/bazel-out
+/videoGameCatalogManager/.angular
+/videoGameCatalogManager/.vscode
