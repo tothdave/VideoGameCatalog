@@ -1,0 +1,6 @@
+# Frontend
+/videoGameCatalogManager/node_modules
+/videoGameCatalogManager/dist
+/videoGameCatalogManager/tmp
+/videoGameCatalogManager/out-tsc
+/videoGameCatalogManager/bazel-out
