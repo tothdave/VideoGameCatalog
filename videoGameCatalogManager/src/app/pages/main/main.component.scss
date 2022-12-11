@@ -1,0 +1,18 @@
+.app-icon{
+    width: 50px;
+    margin: 0 1.5rem;
+
+    mat-icon {
+        font-size: 50px;
+        width: 50px;
+    }
+}
+
+.toolbox{
+    display: flex;
+    background-color: #363534;
+}
+
+.content-holder{
+    padding-bottom: 2rem;
+}

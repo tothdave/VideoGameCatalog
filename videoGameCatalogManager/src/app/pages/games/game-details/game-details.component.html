@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="page-title-row row">
+        <div class="row-left col-md-4 lh-1">
+            <span>{{operation === 'add' ? "Add " : "Edit "}}</span>
+            <span class="text-danger">{{operation === 'add' ? "New Game" : gameDetailsForm.value.name }}</span>
+        </div>
+        <div class="row-right justify-content-between justify-content-md-end col-md-8">
+            <button mat-raised-button color="primary" class="m-2" (click)="saveGame()">
+                Save<mat-icon>save</mat-icon>
+            </button>
+            <button *ngIf="operation === 'edit'" mat-raised-button color="warn" class="m-2"
+                (click)="openDeletePrompt()">
+                Delete<mat-icon>delete</mat-icon>
+            </button>
+            <button mat-raised-button color="primary" class="m-2" (click)="navigateBack()">
+                Back<mat-icon>arrow_back</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div [formGroup]="gameDetailsForm">
+        <div class="row mt-3">
+            <div class="col-md-4 text-center">
+                <img class="game-image pb-3" [src]="gameDetailsForm.value.imageUrl"
+                    (error)="utilService.getFallbackImage($event)"
+                    [alt]="gameDetailsForm.value.name ? gameDetailsForm.value.name: 'Placeholder Image'">
+            </div>
+            <div class="col-md-8">
+                <div class="row">
+                    <mat-form-field class="mb-3" appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput formControlName="name">
+                        <mat-hint
+                            [ngClass]="gameDetailsForm.get('name').invalid && gameDetailsForm.get('name').touched ? 'error-message' : 'd-none'">
+                            Name field cannot be empty!
+                        </mat-hint>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3" appearance="fill">
+                        <mat-label>Developer</mat-label>
+                        <input matInput formControlName="developer">
+                        <mat-hint
+                            [ngClass]="gameDetailsForm.get('developer').invalid && gameDetailsForm.get('developer').touched ? 'error-message' : 'd-none'">
+                            Developer field cannot be empty!
+                        </mat-hint>
+                    </mat-form-field>
+                    <mat-form-field class="mb-3" appearance="fill">
+                        <mat-label>Genre</mat-label>
+                        <input matInput formControlName="genre">
+                    </mat-form-field>
+                    <mat-form-field class="mb-3" appearance="fill">
+                        <mat-label>Player Mode</mat-label>
+                        <input matInput formControlName="playerMode">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="w-100 mb-3" appearance="fill">
+                    <mat-label>Image Url</mat-label>
+                    <input matInput formControlName="imageUrl">
+                    <mat-hint
+                        [ngClass]="gameDetailsForm.get('imageUrl').invalid && gameDetailsForm.get('imageUrl').touched ? 'error-message' : 'd-none'">
+                        Image Url field cannot be empty!
+                    </mat-hint>
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="w-100 mb-3" appearance="fill">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput formControlName="description" cdkTextareaAutosize cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="5">
+                    </textarea>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+</div>

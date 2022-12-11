@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="page-title-row row">
+        <div class="row-left col-md-4">
+            <span>All games</span>
+        </div>
+        <div class="row-right justify-content-between justify-content-md-end col-md-8">
+            <button mat-raised-button color="primary" class="m-2" (click)="navigateToAddGame()">
+                Add Game<mat-icon>add</mat-icon>
+            </button>
+            <mat-form-field class="example-form-field m-2" floatLabel="never">
+                <input matInput type="text" placeholder="Search..." [(ngModel)]="searchValue">
+                <button (click)="searchValue=''" *ngIf="searchValue" matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <ng-container *ngFor="let game of searchGames()">
+            <div class="col-6 col-md-4 col-lg-3 mt-3">
+                <app-card [data]="game" (deleteEmitter)="deleteGame($event)"></app-card>
+            </div>
+        </ng-container>
+        <div *ngIf="searchGames().length < 1" class="no-data">
+            <span>No games to display!</span>
+        </div>
+    </div>
+</div>

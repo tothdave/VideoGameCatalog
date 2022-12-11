@@ -1,0 +1,11 @@
+<mat-card class="card">
+    <img mat-card-image [src]="data.imageUrl" (error)="utilService.getFallbackImage($event)" [alt]="data.name">
+    <mat-card-header class="custom-card-header">
+        <mat-card-title>{{data.name}}</mat-card-title>
+    </mat-card-header>
+    <hr>
+    <mat-card-actions class="action-btn-group">
+        <button mat-raised-button color="primary" (click)="editGame()">Edit</button>
+        <button mat-raised-button color="warn" (click)="openDeleteDialog()">Delete</button>
+    </mat-card-actions>
+</mat-card>

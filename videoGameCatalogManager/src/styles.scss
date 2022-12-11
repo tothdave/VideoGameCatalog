@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%; 
+}
+
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: #a0e1cb !important;
+    font-size: 20px !important;
+}
+
+.page-title-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .row-left{
+        text-align: center;
+        font-size: 30px;
+        margin: 2rem 0;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    .row-right{
+        display: flex;
+        align-items: center;
+    }
+    
+    button{
+        font-size: 16px;
+    }
+}
+
+.mat-dialog-container{
+    font-size: 16px;
+}
+
+.snackBar-success{
+    background-color: lightgreen;
+
+    span{
+        font-size: 16px;
+        color: black;
+    }
+    button > span{
+        font-size: 16px;
+        color: red;
+    }
+}
+
+.snackBar-error{
+    background-color: red;
+
+    span{
+        font-size: 16px;
+        color: #fff;
+    }
+    button > span{
+        font-size: 16px;
+        color: black;
+    }
+}

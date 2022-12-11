@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>Delete {{data.name}}?</h1>
+<div mat-dialog-content>Are you sure to delete {{data.name}}?</div>
+<div mat-dialog-actions class="justify-content-between">
+    <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+    <button mat-raised-button color="warn" (click)="closeDialog(data.operation)">{{data.operation}}</button>
+</div>
